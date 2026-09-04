@@ -1,0 +1,14 @@
+[Unit]
+Description=Raspberry Pi Camera Gateway
+After=network.target
+
+[Service]
+Type=simple
+User=camera-eu
+WorkingDirectory=/home/camera-eu
+ExecStart=/usr/bin/java -jar /home/camera-eu/gateway.jar
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
